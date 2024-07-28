@@ -2,9 +2,8 @@ FROM --platform=i386 i386/python:3-slim-bookworm
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Install service-specific packages
-# RUN apt-get update -qqy && apt-get install -qqy \
-#     ffmpeg \
-#     aria2
+RUN apt-get update -qqy && apt-get install -qqy \
+    git
 
 # Python virtualenv: https://pythonspeed.com/articles/activate-virtualenv-dockerfile/
 ENV VIRTUAL_ENV=/opt/venv
